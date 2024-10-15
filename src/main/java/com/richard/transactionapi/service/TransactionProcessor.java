@@ -53,7 +53,7 @@ public class  TransactionProcessor {
 
     }
 
-    @Scheduled(cron = "* 5 * * * *") // runs at 2 AM every day
+    @Scheduled(cron = "0 2 * * * *") // runs at 2 AM every day
     private void updateCommissions() {
         List<Transaction> successfulTransactions = transactionRepo.findByStatus(TransactionStatus.valueOf(String.valueOf(TransactionStatus.SUCCESSFUL)));
         for (Transaction transaction : successfulTransactions) {

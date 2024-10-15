@@ -92,7 +92,7 @@ public class TransactionServiceImpl implements ITransactionService {
      * Scheduled operation to generate transaction summaries.
      * Runs daily at a specified time (e.g., midnight).
      */
-    @Scheduled(cron = "* 2 * * * *") // Runs every day at 1 AM
+    @Scheduled(cron = "0 1 * * * *") // Runs every day at 1 AM
     public void generateDailyTransactionSummary() {
         // Specify the day (e.g., previous day)
         LocalDate summaryDate = LocalDate.now().minusDays(1);
